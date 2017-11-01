@@ -1,0 +1,9 @@
+{
+  "chefs": 3,
+  "menu": [
+    { "name": "hamburger",   "cooking_time": 300 },
+    { "name": "salad",       "cooking_time": 100 },
+    { "name": "ratatouille", "cooking_time": 400 },
+    { "name": "tofu_burger", "cooking_time": 300 }
+  ]
+}
