@@ -43,7 +43,7 @@ public class RestaurantConfig {
         LOG.info("Loading restaurant configuration ...");
         ObjectMapper mapper = new ObjectMapper();
         try {
-            Restaurant restaurant = mapper.readValue(new ClassPathResource("restaurant.json").getFile(), Restaurant.class);
+            Restaurant restaurant = mapper.readValue(new ClassPathResource("restaurant.json").getInputStream(), Restaurant.class);
             LOG.info("... loaded {} chefs!", restaurant.getChefs());
             LOG.info("... loaded {} dishes!", restaurant.getDishes().size());
             LOG.info("... completed!");
