@@ -1,8 +1,0 @@
-restaurant/dto/Chef.class
-restaurant/RestaurantConfig.class
-restaurant/dto/Restaurant.class
-restaurant/service/RestaurantService.class
-restaurant/dto/Order.class
-restaurant/dto/Dish.class
-restaurant/dto/CookedDish.class
-restaurant/Application.class
