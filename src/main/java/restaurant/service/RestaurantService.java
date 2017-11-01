@@ -22,28 +22,28 @@ public class RestaurantService {
     }
 
     private final RestaurantConfig config;
-    private final List<Order>      incomingOrders = new LinkedList<>();
-    private final List<CookedDish> cookedDishes   = new LinkedList<>();
+    private final List<CookedDish> cookedDishes = new LinkedList<>();
 
     public boolean acceptOrder(Order order) {
         LOG.info("accepting order: {}", order);
-        return incomingOrders.add(order);
+
+        if (config.getAllChefs().isEmpty()) {
+            LOG.error("no chef available");
+            return false;
+        }
+
+        order.getOrderedDishes().stream().map(dishName -> config.getAllDishes().get(dishName)).forEach(dish -> {
+            config.getAllChefs().stream().sorted(Chef.SORT_BY_COOKING_TIME).findFirst().ifPresent(chef -> {
+                cookedDishes.add(CookedDish.of(order.getTable(), dish, chef));
+                chef.cook(dish);
+            });
+        });
+
+        return true;
+
     }
 
     public List<CookedDish> getCookedDishes() {
-        // 1. clear cooked dishes
-        cookedDishes.clear();
-        // 2. reset cooking time for each chef
-        config.getAllChefs().stream().forEach(Chef::reset);
-        // 3. compute cooked dished
-        incomingOrders.forEach(order -> {
-            order.getOrderedDishes().stream().map(dishName -> config.getAllDishes().get(dishName)).forEach(dish -> {
-                config.getAllChefs().stream().sorted(Chef.SORT_BY_COOKING_TIME).findFirst().ifPresent(chef -> {
-                    cookedDishes.add(CookedDish.of(order.getTable(), dish, chef));
-                    chef.cook(dish);
-                });
-            });
-        });
         return cookedDishes;
     }
 
