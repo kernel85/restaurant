@@ -15,14 +15,14 @@
 
 ## How to run [![Build Status](https://travis-ci.org/kernel85/restaurant.svg?branch=master)](https://travis-ci.org/kernel85/restaurant)
 
-### Step 1. Clone project
+### 1. Clone project
 ```$ git clone git@github.com:kernel85/restaurant.git```
 
-### Step 2. Build and package jar
+### 2. Build and package jar
 ```$ mvn package```
 
-### Step 3. Create docker image
+### 3. Create docker image
 ```$ mvn install dockerfile:build```
 
-### Step 4. Run
+### 4. Run
 ```$ docker run -p 8080:8080 -t kernel/restaurant-rest-service```
