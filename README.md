@@ -1,3 +1,9 @@
+## OS requirements
+
+- Java SE 1.8
+- Maven 3.5.2
+- Docker 17.09.0-ce
+
 ## Main adopted technologies
 
 - Java SE 1.8
@@ -5,11 +11,12 @@
 - JUnit 4.12
 - Maven 3.5.2
 - Travis-CI (continuos integration)
+- Docker 17.09.0-ce
 
-## How to run [![Build Status](https://travis-ci.org/kernel85/sales-taxes.svg?branch=master)](https://travis-ci.org/kernel85/restaurant)
+## How to run [![Build Status](https://travis-ci.org/kernel85/restaurant.svg?branch=master)](https://travis-ci.org/kernel85/restaurant)
 
-### Step 1. Project checkout
-```$ git checkout```
+### Step 1. Clone project
+```$ git clone git@github.com:kernel85/restaurant.git```
 
 ### Step 2. Build and package jar
 ```$ mvn package```
