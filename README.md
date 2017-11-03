@@ -16,8 +16,10 @@
 ## How to run [![Build Status](https://travis-ci.org/kernel85/restaurant.svg?branch=master)](https://travis-ci.org/kernel85/restaurant)
 
 #### 1. Clone project
-```$ git clone git@github.com:kernel85/restaurant.git```
-```$ cd restaurant/```
+```
+$ git clone git@github.com:kernel85/restaurant.git
+$ cd restaurant/
+```
 
 #### 2. Build and package jar
 ```$ mvn package```
