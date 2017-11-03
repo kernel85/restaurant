@@ -22,7 +22,7 @@ $ cd restaurant/
 ```
 
 #### 2. Project configuration
-Under ```resources/``` directory you can find a json file ```restaurant.json``` which contais the startup configuration.
+Under ```src/main/resources/``` directory you can find a json file ```restaurant.json``` which contains the startup configuration.
 
 #### 3. Build and package jar
 ```$ mvn package```
