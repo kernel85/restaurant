@@ -21,11 +21,14 @@ $ git clone git@github.com:kernel85/restaurant.git
 $ cd restaurant/
 ```
 
-#### 2. Build and package jar
+#### 2 Project configuration
+Under ```resources/``` directory you can find a json file ```restaurant.json``` which contais the startup configuration.
+
+#### 3. Build and package jar
 ```$ mvn package```
 
-#### 3. Create docker image
+#### 4. Create docker image
 ```$ mvn install dockerfile:build```
 
-#### 4. Run
+#### 5. Run
 ```$ docker run -p 8080:8080 -t kernel/restaurant-rest-service```
