@@ -17,6 +17,7 @@
 
 #### 1. Clone project
 ```$ git clone git@github.com:kernel85/restaurant.git```
+```$ cd restaurant/```
 
 #### 2. Build and package jar
 ```$ mvn package```
