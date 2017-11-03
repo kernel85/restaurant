@@ -1,4 +1,4 @@
-## How to run
+## How to run [![Build Status](https://travis-ci.org/kernel85/sales-taxes.svg?branch=master)](https://travis-ci.org/kernel85/restaurant)
 
 ### Step 1. Project checkout
 ```$ git checkout```

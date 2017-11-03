@@ -1,0 +1,15 @@
+language: java
+
+jdk:
+    - oraclejdk8
+
+branches:
+    only:
+        - master
+
+notifications:
+    email:
+        recipients: 
+            - riccardo.biondi@gmail.com
+        on_success: change
+        on_failure: always
