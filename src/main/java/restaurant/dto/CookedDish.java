@@ -11,7 +11,7 @@ public class CookedDish {
     }
 
     public CookedDish(int table, String food, String cookedBy, int startedAt, int finishedAt) {
-        this.table      = requireNonNull(table);
+        this.table      = table;
         this.food       = requireNonNull(food);
         this.cookedBy   = requireNonNull(cookedBy);
         this.startedAt  = startedAt;
