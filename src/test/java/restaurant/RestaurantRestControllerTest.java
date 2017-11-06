@@ -97,7 +97,7 @@ public class RestaurantRestControllerTest {
 
     // private utils
 
-    private static final RestaurantService initRestaurantService(int chefs) {
+    private static RestaurantService initRestaurantService(int chefs) {
         return new RestaurantService(new RestaurantConfig(
             IntStream.range(1, chefs+1).mapToObj(Chef::new).collect(Collectors.toList()),
             Arrays.asList(HAMBURGER, SALAD, RATATOUILLE, TOFU_BURGER)
