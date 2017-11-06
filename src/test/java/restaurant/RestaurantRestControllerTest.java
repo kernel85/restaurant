@@ -21,7 +21,7 @@ public class RestaurantRestControllerTest {
     private final static Dish RATATOUILLE = new Dish("ratatouille", 400);
     private final static Dish TOFU_BURGER = new Dish("tofu_burger", 200);
 
-    @Test public void testOneOrderThreeChefs() throws Exception {
+    @Test public void testOneOrderThreeChefs() {
         RestaurantService restaurantService = initRestaurantService(3); // 3 chefs
         restaurantService.acceptOrder(new Order(1, Arrays.asList(HAMBURGER.getName(), SALAD.getName()))); // table 1
         List<CookedDish> expected = Arrays.asList(
@@ -31,7 +31,7 @@ public class RestaurantRestControllerTest {
         assertEquals(expected, restaurantService.getCookedDishes());
     }
 
-    @Test public void testTwoOrdersOneChef() throws Exception {
+    @Test public void testTwoOrdersOneChefs() {
         RestaurantService restaurantService = initRestaurantService(1); // 1 chef
         restaurantService.acceptOrder(new Order(1, Arrays.asList(HAMBURGER.getName(), SALAD.getName()))); // table 1
         restaurantService.acceptOrder(new Order(2, Arrays.asList(SALAD.getName(),     SALAD.getName()))); // table 2
@@ -46,8 +46,8 @@ public class RestaurantRestControllerTest {
         assertEquals(expected, restaurantService.getCookedDishes());
     }
 
-    @Test public void testTwoOrdersTwoChef() throws Exception {
-        RestaurantService restaurantService = initRestaurantService(2); // 2 chef
+    @Test public void testTwoOrdersTwoChefs() {
+        RestaurantService restaurantService = initRestaurantService(2); // 2 chefs
         restaurantService.acceptOrder(new Order(1, Arrays.asList(HAMBURGER.getName(), SALAD.getName()))); // table 1
         restaurantService.acceptOrder(new Order(2, Arrays.asList(SALAD.getName(),     SALAD.getName()))); // table 2
 
@@ -61,8 +61,8 @@ public class RestaurantRestControllerTest {
         assertEquals(expected, restaurantService.getCookedDishes());
     }
 
-    @Test public void testTwoOrdersThreeChef() throws Exception {
-        RestaurantService restaurantService = initRestaurantService(3); // 2 chef
+    @Test public void testTwoOrdersThreeChefs() {
+        RestaurantService restaurantService = initRestaurantService(3); // 3 chefs
         restaurantService.acceptOrder(new Order(1, Arrays.asList(HAMBURGER.getName(), SALAD.getName()))); // table 1
         restaurantService.acceptOrder(new Order(2, Arrays.asList(SALAD.getName(),     SALAD.getName()))); // table 2
 
@@ -76,8 +76,8 @@ public class RestaurantRestControllerTest {
         assertEquals(expected, restaurantService.getCookedDishes());
     }
 
-    @Test public void testThreeOrdersThreeChef() throws Exception {
-        RestaurantService restaurantService = initRestaurantService(3); // 2 chef
+    @Test public void testThreeOrdersThreeChefs() {
+        RestaurantService restaurantService = initRestaurantService(3); // 3 chefs
         restaurantService.acceptOrder(new Order(1, Arrays.asList(HAMBURGER.getName(),   SALAD.getName())));                        // table 1
         restaurantService.acceptOrder(new Order(2, Arrays.asList(SALAD.getName(),       SALAD.getName())));                        // table 2
         restaurantService.acceptOrder(new Order(3, Arrays.asList(RATATOUILLE.getName(), TOFU_BURGER.getName(), SALAD.getName()))); // table 3
