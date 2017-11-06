@@ -22,6 +22,5 @@ public class Chef {
     public int        getTotalCookingTime() { return cookedDishes.stream().map(Dish::getCookingTime).reduce(0, Integer::sum); }
 
     public void cook(Dish dish) { cookedDishes.add(dish); }
-    public void reset()         { cookedDishes.clear(); }
 
 }
