@@ -12,7 +12,11 @@ import java.util.List;
 @RestController
 public class RestaurantRestController {
 
-    @Autowired RestaurantService restaurantService;
+    @Autowired public RestaurantRestController(RestaurantService restaurantService) {
+        this.restaurantService = restaurantService;
+    }
+
+    private final RestaurantService restaurantService;
 
     @RequestMapping(value = "/orders", method = RequestMethod.POST)
     public @ResponseBody Response addOrder(@RequestBody Order order) {
